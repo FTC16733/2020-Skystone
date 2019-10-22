@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.robotcontroller.internal;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
@@ -34,7 +33,7 @@ public class Auto2 extends LinearOpMode {
     private static final boolean PHONE_IS_PORTRAIT = false  ;
 
     private static final String VUFORIA_KEY =
-            " -- YOUR NEW VUFORIA KEY GOES HERE  --- ";
+            "AdpJN5r/////AAABmR2K/BHtN0X+hVVWz2vu3kdoXNc/Ze7xDcL0ei1G+xLPL8RvmWM4A0Hf32JzpBhAKP3dfiX+GnovSj6ZcgSvfFscI3MQamGZqI6o4TwqyWT2luBL3grxkVd13v1y7bgesArA0EtwJmXfYiEuGc2lTdo0P67wTRU6xrIqcBCFhKoU9yoOg5a/hk8W68wX/PUJBbn6GG8a+t0wGLFnKKs+bUxQlOumoWL3V1V8rSXJPUz95qGTGc2g3qpyWoYkPiXYSYg3usy4XVDYkkjMGgcLrTQ1UGGYayKxcxA4dF/0MrFpOA+8VmaOpCzhdjfMEY5yy3cahOmQBtEuSaFJMVG0MV6Oony+qV8DcJSwVjiQJNQ8";
 
     private static final float mmPerInch        = 25.4f;
     private static final float mmTargetHeight   = (6) * mmPerInch;          // the height of the center of the target image above the floor

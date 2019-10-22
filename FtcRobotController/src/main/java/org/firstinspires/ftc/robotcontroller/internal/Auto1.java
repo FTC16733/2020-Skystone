@@ -13,8 +13,6 @@ public class Auto1 extends LinearOpMode {
     int encoderCount = Properties.COUNTS_PER_REV;
     double wheelSize = Properties.wheelSize;
     double wheelCircumference = Properties.Wheel_Circumference;
-    double robotDiameter = Properties.robotDiameter;
-    double robotCircumference = Properties.robotCircumference;
     double distancePerPulse = Properties.distancePerPulse;
     double pulsePerInch = Properties.pulsePerInch;
     private ElapsedTime runtime = new ElapsedTime();
