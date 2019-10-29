@@ -27,6 +27,7 @@ public class Teleop extends OpMode {
         backLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         servo1 = hardwareMap.get(Servo.class, RobotPreferences.servo1);
+        servo2 = hardwareMap.get(Servo.class, RobotPreferences.servo2);
     }
 
     @Override
@@ -49,7 +50,7 @@ public class Teleop extends OpMode {
     }
 
 
-    
+
 
     private void mecanumDrive(double leftx, double lefty, double rightx) {
         double fl = lefty-leftx+rightx;
