@@ -15,6 +15,7 @@ public class Teleop extends OpMode {
     DcMotor backLeftMotor;
     DcMotor backRightMotor;
     Servo servo1;
+    Servo servo2;
     @Override
     public void init() {
         frontLeftMotor = hardwareMap.get(DcMotor.class, RobotPreferences.motor1);
@@ -31,10 +32,24 @@ public class Teleop extends OpMode {
     @Override
     public void loop(){
         mecanumDrive(gamepad1.left_stick_x, gamepad1.left_stick_y, gamepad1.right_stick_x);
+        if(gamepad1.a){
+            servo(0,servo1);
         }
+        else if(gamepad1.b){
+            servo(90, servo1);
+        }
+        if(gamepad1.x){
+            servo(0, servo2);
+        }
+        else if(gamepad1.y){
+            servo(90, servo2);
+        }
+        telemetry.addData("Running: ", "Running at %7d: %7d: %7d: %7d", frontLeftMotor.getCurrentPosition(), frontRightMotor.getCurrentPosition(), backLeftMotor.getCurrentPosition(), backRightMotor.getCurrentPosition());
+        telemetry.update();
+    }
 
 
-
+    
 
     private void mecanumDrive(double leftx, double lefty, double rightx) {
         double fl = lefty-leftx+rightx;
