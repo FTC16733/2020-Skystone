@@ -19,12 +19,10 @@ public class Teleop extends OpMode {
     @Override
     public void init() {
         frontLeftMotor = hardwareMap.get(DcMotor.class, RobotPreferences.motor1);
-        frontRightMotor = hardwareMap.get(DcMotor.class, RobotPreferences.motor2);
-        backLeftMotor =hardwareMap.get(DcMotor.class, RobotPreferences.motor3);
+        frontRightMotor = hardwareMap.get(DcMotor.class, RobotPreferences.motor3);
+        backLeftMotor =hardwareMap.get(DcMotor.class, RobotPreferences.motor2);
         backRightMotor =hardwareMap.get(DcMotor.class, RobotPreferences.motor4);
 
-        frontLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-        backLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         servo1 = hardwareMap.get(Servo.class, RobotPreferences.servo1);
         servo2 = hardwareMap.get(Servo.class, RobotPreferences.servo2);
@@ -32,17 +30,18 @@ public class Teleop extends OpMode {
 
     @Override
     public void loop(){
-        mecanumDrive(gamepad1.left_stick_x, gamepad1.left_stick_y, gamepad1.right_stick_x);
+        mecanumDrive(-gamepad1.left_stick_x, gamepad1.right_stick_x, -gamepad1.left_stick_y );
+      //  servo1(gamepad1.a,gamepad1.b);
         if(gamepad1.a){
             servo(0,servo1);
         }
         else if(gamepad1.b){
             servo(90, servo1);
         }
-        if(gamepad1.x){
+        if(gamepad1.a){
             servo(0, servo2);
         }
-        else if(gamepad1.y){
+        else if(gamepad1.b){
             servo(90, servo2);
         }
         telemetry.addData("Running: ", "Running at %7d: %7d: %7d: %7d", frontLeftMotor.getCurrentPosition(), frontRightMotor.getCurrentPosition(), backLeftMotor.getCurrentPosition(), backRightMotor.getCurrentPosition());
